@@ -10,5 +10,4 @@ jobs:
       env:
         MY_VAR: Hi there! My name is
       run: |
-        apt install sshpass
         sshpass -p 19980418@Pwd ssh root@120.48.122.125 -o "StrictHostKeyChecking no" touch /opt/123
