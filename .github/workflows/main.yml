@@ -1,4 +1,4 @@
-name: Greeting from Mona
+name: ssh my machine
 on: push
 
 jobs:
@@ -6,11 +6,9 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-    - name: Print a greeting
+    - name: ssh my machine
       env:
         MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        apt install sshpass
+        sshpass -p 19980418@Pwd ssh root@120.48.122.125 -o "StrictHostKeyChecking no" touch /opt/123
